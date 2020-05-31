@@ -35,7 +35,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/SDL2-Crystal/fork>)
+1. Fork it (<https://github.com/lodenos/SDL2-Crystal/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -43,4 +43,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [lodenos](https://github.com/your-github-user) - creator and maintainer
+- [lodenos](https://github.com/lodenos) - creator and maintainer
