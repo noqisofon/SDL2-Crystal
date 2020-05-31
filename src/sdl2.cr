@@ -1,6 +1,13 @@
-# TODO: Write documentation for `Sdl2`
-module Sdl2
-  VERSION = "0.1.0"
-
-  # TODO: Put your code here
-end
+require "./audio/*"
+require "./basics/*"
+require "./events/*"
+require "./feedback/*"
+require "./filesystem/*"
+require "./functionality/*"
+require "./inputs/*"
+require "./platform/*"
+require "./power/*"
+require "./shared/*"
+require "./threads/*"
+require "./timers/*"
+require "./video/*"
