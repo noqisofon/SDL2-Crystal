@@ -4,15 +4,22 @@ TODO: Write a description here
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+1. 
+```shell
+./configure
+make
+sudo make install
+```
 
-   ```yaml
-   dependencies:
-     sdl2:
-       github: your-github-user/SDL2-Crystal
-   ```
+2. Add the dependency to your `shard.yml`:
 
-2. Run `shards install`
+```yaml
+dependencies:
+  sdl2:
+    github: lodenos/SDL2-Crystal
+```
+
+3. Run `shards install`
 
 ## Usage
 
