@@ -55,7 +55,7 @@ lib LibSDL2
     HINT_OVERRIDE
   end
 
-  type SDL_HintCallback = Pointer(Void) -> Pointer(Char) -> Pointer(Char) -> Pointer(Char) -> Void
+  type SDL_HintCallback = Pointer(Void), Pointer(Char), Pointer(Char), Pointer(Char) -> Void
 
   fun add_hint_callback      = SDL_AddHintCallback(name: Pointer(Char), callback: SDL_HintCallback, userdata: Pointer(Void)) : Void
   fun clear_hints            = SDL_ClearHints : Void
