@@ -33,16 +33,16 @@ lib LibSDL2
   end
 
   enum GLcontextFlag
-    GL_CONTEXT_DEBUG_FLAG = 0x0001
+    GL_CONTEXT_DEBUG_FLAG              = 0x0001
     GL_CONTEXT_FORWARD_COMPATIBLE_FLAG = 0x0002
-    GL_CONTEXT_ROBUST_ACCESS_FLAG = 0x0004
-    GL_CONTEXT_RESET_ISOLATION_FLAG = 0x0008
+    GL_CONTEXT_ROBUST_ACCESS_FLAG      = 0x0004
+    GL_CONTEXT_RESET_ISOLATION_FLAG    = 0x0008
   end
 
   enum GLprofile
-    GL_CONTEXT_PROFILE_CORE = 0x0001
+    GL_CONTEXT_PROFILE_CORE          = 0x0001
     GL_CONTEXT_PROFILE_COMPATIBILITY = 0x0002
-    GL_CONTEXT_PROFILE_ES = 0x0004
+    GL_CONTEXT_PROFILE_ES            = 0x0004
   end
 
   enum HitTestResult
@@ -83,28 +83,28 @@ lib LibSDL2
   end
 
   enum WindowFlags
-    WINDOW_FULLSCREEN = 0x00000001
-    WINDOW_OPENGL = 0x00000002
-    WINDOW_SHOWN = 0x00000004
-    WINDOW_HIDDEN = 0x00000008
-    WINDOW_BORDERLESS = 0x00000010
-    WINDOW_RESIZABLE = 0x00000020
-    WINDOW_MINIMIZED = 0x00000040
-    WINDOW_MAXIMIZED = 0x00000080
-    WINDOW_INPUT_GRABBED = 0x00000100
-    WINDOW_INPUT_FOCUS = 0x00000200
-    WINDOW_MOUSE_FOCUS = 0x00000400
+    WINDOW_FULLSCREEN         = 0x00000001
+    WINDOW_OPENGL             = 0x00000002
+    WINDOW_SHOWN              = 0x00000004
+    WINDOW_HIDDEN             = 0x00000008
+    WINDOW_BORDERLESS         = 0x00000010
+    WINDOW_RESIZABLE          = 0x00000020
+    WINDOW_MINIMIZED          = 0x00000040
+    WINDOW_MAXIMIZED          = 0x00000080
+    WINDOW_INPUT_GRABBED      = 0x00000100
+    WINDOW_INPUT_FOCUS        = 0x00000200
+    WINDOW_MOUSE_FOCUS        = 0x00000400
     WINDOW_FULLSCREEN_DESKTOP = WINDOW_FULLSCREEN | 0x00001000
-    WINDOW_FOREIGN = 0x00000800
-    WINDOW_ALLOW_HIGHDPI = 0x00002000
-    WINDOW_MOUSE_CAPTURE = 0x00004000
-    WINDOW_ALWAYS_ON_TOP = 0x00008000
-    WINDOW_SKIP_TASKBAR = 0x00010000
-    WINDOW_UTILITY = 0x00020000
-    WINDOW_TOOLTIP = 0x00040000
-    WINDOW_POPUP_MENU = 0x00080000
-    WINDOW_VULKAN = 0x10000000
-    WINDOW_METAL = 0x20000000
+    WINDOW_FOREIGN            = 0x00000800
+    WINDOW_ALLOW_HIGHDPI      = 0x00002000
+    WINDOW_MOUSE_CAPTURE      = 0x00004000
+    WINDOW_ALWAYS_ON_TOP      = 0x00008000
+    WINDOW_SKIP_TASKBAR       = 0x00010000
+    WINDOW_UTILITY            = 0x00020000
+    WINDOW_TOOLTIP            = 0x00040000
+    WINDOW_POPUP_MENU         = 0x00080000
+    WINDOW_VULKAN             = 0x10000000
+    WINDOW_METAL              = 0x20000000
   end
 
   struct DisplayMode
@@ -128,7 +128,7 @@ lib LibSDL2
   fun disable_screen_saver = SDL_DisableScreenSaver : Void
   fun enable_screen_saver = SDL_EnableScreenSaver : Void
   fun gl_create_context = SDL_GL_CreateContext(window : Pointer(Window)) : GLContext
-  fun gl_delete_context = SDL_GL_DeleteContext(context :  GLContext) : Void
+  fun gl_delete_context = SDL_GL_DeleteContext(context : GLContext) : Void
   fun gl_extension_supported = SDL_GL_ExtensionSupported(extension : Pointer(Int8)) : Bool
   fun gl_get_attribute = SDL_GL_GetAttribute(attr : GLattr, value : Pointer(Int32)) : Int32
   fun gl_get_current_context = SDL_GL_GetCurrentContext : GLContext
@@ -153,7 +153,7 @@ lib LibSDL2
   fun get_display_name = SDL_GetDisplayName(displayIndex : Int32) : Pointer(Int8)
   fun get_display_usable_bounds = SDL_GetDisplayUsableBounds(displayIndex : Int32, rect : Pointer(Rect)) : Int32
   fun get_grabbed_window = SDL_GetGrabbedWindow : Pointer(Window)
-  fun get_num_display_modes = SDL_GetNumDisplayModes(displayIndex : Int32) : Int32 
+  fun get_num_display_modes = SDL_GetNumDisplayModes(displayIndex : Int32) : Int32
   fun get_num_video_displays = SDL_GetNumVideoDisplays : Int32
   fun get_num_video_drivers = SDL_GetNumVideoDrivers : Int32
   fun get_video_driver = SDL_GetVideoDriver(index : Int32) : Pointer(Int8)
@@ -185,7 +185,7 @@ lib LibSDL2
   fun set_window_bordered = SDL_SetWindowBordered(window : Pointer(Window), bordered : Bool) : Void
   fun set_window_brightness = SDL_SetWindowBrightness(window : Pointer(Window), brightness : Float32) : Int32
   fun set_window_data = SDL_SetWindowData(window : Pointer(Window), name : Pointer(UInt8), userdata : Pointer(Void)) : Pointer(Void)
-  fun set_window_display_mode = SDL_SetWindowDisplayMode(window : Pointer(Window), mode : Pointer(DisplayMode)) : Int32 
+  fun set_window_display_mode = SDL_SetWindowDisplayMode(window : Pointer(Window), mode : Pointer(DisplayMode)) : Int32
   fun set_window_fullscreen = SDL_SetWindowFullscreen(window : Pointer(Window), flags : UInt32) : Int32
   fun set_window_gamma_ramp = SDL_SetWindowGammaRamp(window : Pointer(Window), red : Pointer(UInt16), green : Pointer(UInt16), blue : Pointer(UInt16)) : Int32
   fun set_window_grab = SDL_SetWindowGrab(window : Pointer(Window), grabbed : Bool) : Void
@@ -200,11 +200,11 @@ lib LibSDL2
   fun set_window_resizable = SDL_SetWindowResizable(window : Pointer(Window), resizable : Bool) : Void
   fun set_window_size = SDL_SetWindowSize(window : Pointer(Window), w : Int32, h : Int32) : Void
   fun set_window_title = SDL_SetWindowTitle(window : Pointer(Window), title : Pointer(UInt8)) : Void
-  fun show_message_box = SDL_ShowMessageBox(messageboxdata : Pointer(MessageBoxData), buttonid : Ponter(Int32)) : Int32 
-  fun show_simple_message_box = SDL_ShowSimpleMessageBox(flags : UInt32, title : Pointer(UInt8), message : Pointer(UInt8), window : Pointer(Window)) : Int32 
+  fun show_message_box = SDL_ShowMessageBox(messageboxdata : Pointer(MessageBoxData), buttonid : Ponter(Int32)) : Int32
+  fun show_simple_message_box = SDL_ShowSimpleMessageBox(flags : UInt32, title : Pointer(UInt8), message : Pointer(UInt8), window : Pointer(Window)) : Int32
   fun show_window = SDL_ShowWindow(window : Pointer(Window)) : Void
-  fun update_Window_surface = SDL_UpdateWindowSurface(window : Pointer(Window)) : Int32 
-  fun update_window_surface_rects = SDL_UpdateWindowSurfaceRects(window : Pointer(Window), rects : Pointer(Rect), numrects : Int32) : Int32 
+  fun update_Window_surface = SDL_UpdateWindowSurface(window : Pointer(Window)) : Int32
+  fun update_window_surface_rects = SDL_UpdateWindowSurfaceRects(window : Pointer(Window), rects : Pointer(Rect), numrects : Int32) : Int32
   fun video_init = SDL_VideoInit(driver_name : Pointer(UInt8)) : Int32
   fun video_quit = SDL_VideoQuit : Void
 end

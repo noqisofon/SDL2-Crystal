@@ -13,11 +13,11 @@ lib LibSDL2
 
   type MainFunction = Int32, Pointer(Pointer(Char)) -> Int32
 
-  fun init            = SDL_Init(flags: UInt32) : Int32
-  fun init_sub_system = SDL_InitSubSystem(flags: UInt32) : Int32
-  fun quit            = SDL_Quit : Void
-  fun quit_sub_system = SDL_QuitSubSystem(flags: UInt32) : Void
-  fun set_main_ready  = SDL_SetMainReady : Void
-  fun was_init        = SDL_WasInit(flags: UInt32) : UInt32
-  fun winRT_run_app   = SDL_WinRTRunApp(mainFunction: MainFunction, reserved: Pointer(Void)) : Int32
+  fun init = SDL_Init(flags : UInt32) : Int32
+  fun init_sub_system = SDL_InitSubSystem(flags : UInt32) : Int32
+  fun quit = SDL_Quit : Void
+  fun quit_sub_system = SDL_QuitSubSystem(flags : UInt32) : Void
+  fun set_main_ready = SDL_SetMainReady : Void
+  fun was_init = SDL_WasInit(flags : UInt32) : UInt32
+  fun winRT_run_app = SDL_WinRTRunApp(mainFunction : MainFunction, reserved : Pointer(Void)) : Int32
 end
