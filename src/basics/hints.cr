@@ -55,13 +55,13 @@ lib LibSDL2
     HINT_OVERRIDE
   end
 
-  typedef void (SDLCALL *SDL_HintCallback)(void *userdata, const char *name, const char *oldValue, const char *newValue);
+  type SDL_HintCallback = Pointer(Void) -> Pointer(Char) -> Pointer(Char) -> Pointer(Char) -> Void
 
-  fun add_hint_callback = SDL_AddHintCallback(const char* name, SDL_HintCallback callback, void* userdata) : Void
-  fun clear_hints = SDL_ClearHints : Void
-  fun del_hint_callback = SDL_DelHintCallback(const char* name, SDL_HintCallback callback, void* userdata) : Void
-  fun get_hint = SDL_GetHint(name : const char*) : const char*
-  fun get_hint_boolean = SDL_GetHintBoolean(name : const char* , default_value : Bool) : Bool
-  fun set_hint = SDL_SetHint(const char* name, const char* value) : Bool
-  fun set_hint_with_priority = SDL_SetHintWithPriority(const char* name, const char* value, SDL_HintPriority priority) : Bool
+  fun add_hint_callback      = SDL_AddHintCallback(name: Pointer(Char), callback: SDL_HintCallback, userdata: Pointer(Void)) : Void
+  fun clear_hints            = SDL_ClearHints : Void
+  fun del_hint_callback      = SDL_DelHintCallback(name: Pointer(Char), callback: SDL_HintCallback, userdata: Pointer(Void)) : Void
+  fun get_hint               = SDL_GetHint(name: Pointer(Char)) : Pointer(Char)
+  fun get_hint_boolean       = SDL_GetHintBoolean(name: Pointer(Char), default_value: Bool) : Bool
+  fun set_hint               = SDL_SetHint(name: Pointer(Char), value: Pointer(Char)) : Bool
+  fun set_hint_with_priority = SDL_SetHintWithPriority(name: Pointer(Char), value: Pointer(Char), priority: HintPriority) : Bool
 end
