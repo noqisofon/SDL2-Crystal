@@ -1,7 +1,7 @@
 @[Link("SDL2")]
 lib LibSDL2
-  # enum SDL_BlendFactor
-  # enum SDL_BlendOperation
+  # enum SDL_BlendFactor     -> blendmode.cr
+  # enum SDL_BlendOperation  -> blendmode.cr
 
   enum RendererFlags
     RENDERER_SOFTWARE = 0x00000001
