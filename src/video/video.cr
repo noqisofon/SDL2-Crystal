@@ -1,6 +1,6 @@
 @[Link("SDL2")]
 lib LibSDL2
-  # enum SDL_BlendMode
+  # enum SDL_BlendMode -> blendmode.cr
 
   enum GLattr
     GL_RED_SIZE
