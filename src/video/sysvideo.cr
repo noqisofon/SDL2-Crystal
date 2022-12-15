@@ -26,7 +26,7 @@ lib LibSDL2
 
   struct Window
     magic : Pointer(Void)
-    id : Uint32
+    id : UInt32
     title : Pointer(Char)
     icon : Pointer(Surface)
     x : Int32
@@ -57,8 +57,8 @@ lib LibSDL2
 
     shaper : Pointer(WindowShaper)
 
-    hit_test : HitTest
-    hit_test_data : Point(Void)
+    hit_test : SDL_HitTest
+    hit_test_data : Pointer(Void)
 
     data : Pointer(WindowUserData)
 

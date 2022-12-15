@@ -115,6 +115,20 @@ lib LibSDL2
     driverdata : Pointer(Void)
   end
 
+  enum DisplayOrientation
+    ORIENTATION_UNKNOWN           # The display orientation can't be determined
+    ORIENTATION_LANDSCAPE         # The display is in landscape mode, with the right side up, relative to portrait mode
+    ORIENTATION_LANDSCAPE_FLIPPED # The display is in landscape mode, with the left side up, relative to portrait mode
+    ORIENTATION_PORTRAIT          # The display is in portrait mode
+    ORIENTATION_PORTRAIT_FLIPPED  # The display is in portrait mode, upside down
+  end
+
+  enum FlashOperation
+    FLASH_CANCEL        # Cancel any window flash state
+    FLASH_BRIEFLY       # Flash the window briefly to get attention
+    FLASH_UNTIL_FOCUSED # Flash the window until it gets focus
+  end
+
   # struct SDL_MessageBoxButtonData
   # struct SDL_MessageBoxColor
   # struct SDL_MessageBoxColorScheme
@@ -207,4 +221,6 @@ lib LibSDL2
   fun update_window_surface_rects = SDL_UpdateWindowSurfaceRects(window : Pointer(Window), rects : Pointer(Rect), numrects : Int32) : Int32
   fun video_init = SDL_VideoInit(driver_name : Pointer(UInt8)) : Int32
   fun video_quit = SDL_VideoQuit : Void
+
+  type SDL_HitTest = Pointer(Window), Pointer(Point), Pointer(Void) -> HitTestResult
 end
