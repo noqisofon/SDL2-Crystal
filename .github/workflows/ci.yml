@@ -3,11 +3,15 @@ on:
   pull_request: 
     branches: [master]
 jobs:
-  build:
+  test_Ubuntu:
     runs-on: ubuntu-latest
     steps:
       - name: Download source
         uses: actions/checkout@v2
+      - name: Install SDL2
+        run: |
+          sudo apt update -y -qq
+          sudo apt install libsdl2-dev
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
       - name: Run tests
