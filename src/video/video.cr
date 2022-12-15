@@ -129,6 +129,12 @@ lib LibSDL2
     FLASH_UNTIL_FOCUSED # Flash the window until it gets focus
   end
 
+  alias GLContext = Pointer(Void)
+  alias EGLConfig = Pointer(Void)
+  alias EGLSurface = Pointer(Void)
+  alias EGLAttrib = LibC::IntPtrT
+  alias EGLint = Int32
+
   # struct SDL_MessageBoxButtonData
   # struct SDL_MessageBoxColor
   # struct SDL_MessageBoxColorScheme
@@ -203,7 +209,7 @@ lib LibSDL2
   fun set_window_fullscreen = SDL_SetWindowFullscreen(window : Pointer(Window), flags : UInt32) : Int32
   fun set_window_gamma_ramp = SDL_SetWindowGammaRamp(window : Pointer(Window), red : Pointer(UInt16), green : Pointer(UInt16), blue : Pointer(UInt16)) : Int32
   fun set_window_grab = SDL_SetWindowGrab(window : Pointer(Window), grabbed : Bool) : Void
-  fun set_window_hit_test = SDL_SetWindowHitTest(window : Pointer(Window), callback : HitTest, callback_data : Pointer(Void)) : Int32
+  fun set_window_hit_test = SDL_SetWindowHitTest(window : Pointer(Window), callback : SDL_HitTest, callback_data : Pointer(Void)) : Int32
   fun set_window_icon = SDL_SetWindowIcon(window : Pointer(Window), icon : Pointer(Surface)) : Void
   fun set_window_input_focus = SDL_SetWindowInputFocus(window : Pointer(Window)) : Int32
   fun set_window_maximum_size = SDL_SetWindowMaximumSize(window : Pointer(Window), max_w : Int32, max_h : Int32) : Void
@@ -214,8 +220,6 @@ lib LibSDL2
   fun set_window_resizable = SDL_SetWindowResizable(window : Pointer(Window), resizable : Bool) : Void
   fun set_window_size = SDL_SetWindowSize(window : Pointer(Window), w : Int32, h : Int32) : Void
   fun set_window_title = SDL_SetWindowTitle(window : Pointer(Window), title : Pointer(UInt8)) : Void
-  fun show_message_box = SDL_ShowMessageBox(messageboxdata : Pointer(MessageBoxData), buttonid : Ponter(Int32)) : Int32
-  fun show_simple_message_box = SDL_ShowSimpleMessageBox(flags : UInt32, title : Pointer(UInt8), message : Pointer(UInt8), window : Pointer(Window)) : Int32
   fun show_window = SDL_ShowWindow(window : Pointer(Window)) : Void
   fun update_Window_surface = SDL_UpdateWindowSurface(window : Pointer(Window)) : Int32
   fun update_window_surface_rects = SDL_UpdateWindowSurfaceRects(window : Pointer(Window), rects : Pointer(Rect), numrects : Int32) : Int32

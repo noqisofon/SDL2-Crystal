@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Sdl2 do
+describe "SDL2" do
   # TODO: Write tests
 
   it "works" do

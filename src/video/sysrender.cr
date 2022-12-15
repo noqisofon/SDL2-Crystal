@@ -20,7 +20,7 @@ lib LibSDL2
 
     renderer : Pointer(Renderer)
 
-    native : Texture
+    native : Pointer(Texture)
     yuv : SW_YUVTexture
     pixels : Pointer(Void)
     pitch : Int32
