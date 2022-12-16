@@ -132,7 +132,8 @@ lib LibSDL2
   alias GLContext = Pointer(Void)
   alias EGLConfig = Pointer(Void)
   alias EGLSurface = Pointer(Void)
-  alias EGLAttrib = LibC::IntPtrT
+  # alias EGLAttrib = LibC::IntPtrT
+  alias EGLAttrib = Int64
   alias EGLint = Int32
 
   # struct SDL_MessageBoxButtonData
