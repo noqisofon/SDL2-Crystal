@@ -30,21 +30,16 @@ cache:
 # This is a basic example for a shard or script which doesn't use
 # services such as redis or postgres
 before_script:
-  - apt-get update -qq && apt-get install -y -qq libxml2-dev
+  - apt-get update -qq && apt-get install -y -qq libxml2-dev libsdl2-dev
   - crystal -v  # Print out Crystal version for debugging
   - shards
 
 # If you are using built-in Crystal Spec.
 spec:
   script:
-    - crystal spec
+    - crystal spec --tap
 
-# If you are using minitest.cr
-minitest:
-  script:
-    - crystal test/spec_test.cr  # change to the file(s) you execute for tests
-
-deploy:
-  stage: deploy
-  script: echo "Define your deployment script!"
-  environment: production
+# deploy:
+#   stage: deploy
+#   script: echo "Define your deployment script!"
+#   environment: production
